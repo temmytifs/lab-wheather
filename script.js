@@ -17,7 +17,8 @@ function getwheather() {
           const description = data.weather[0].description;
           const cityName = data.name;
           const cloudiness = data.clouds.all;
-          const windSpeed = data.wind.speed; 
+          const windSpeed = data.wind.speed;
+          const errormessage = data.message;
 
           weatherDataElement.innerHTML = `
               <h2>Weather in ${cityName}</h2>
@@ -29,6 +30,6 @@ function getwheather() {
           `;
       })
       .catch((error) => {
-          weatherDataElement.innerHTML = `<p>Error: ${error.message}</p>`;
+        const weatherDataElement = document.getElementById("weatherInfo");
       });
 };
