@@ -1,19 +1,19 @@
 
 
-let searchBtn = document.getElementById("searchBtn").addEventListener("click", function() {
 
+function getwheather() {
   let city = document.getElementById("cityInput").value;
   let tifeApiKey = "748757f44decbdd3da72168d9b197a08";
   let queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${tifeApiKey}`;
 
   fetch(queryURL)
-      .then(function(response) {
+      .then((response) => {
           if (!response.ok) {
               throw new Error('network is not avalible');
           }
           return response.json();
       })
-      .then(function(data) {
+      .then((data) => {
           const weatherDataElement = document.getElementById("weatherInfo");
           const temperature = data.main.temp;
           const description = data.weather[0].description;
@@ -30,8 +30,7 @@ let searchBtn = document.getElementById("searchBtn").addEventListener("click", f
               
           `;
       })
-      .catch(function(error) {
+      .catch((error) => {
           const weatherDataElement = document.getElementById("weatherData");
-          weatherDataElement.innerHTML = `<p>Error: ${error.message}</p>`;
       });
-});
+};
