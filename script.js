@@ -1,6 +1,7 @@
 
 
 
+
 function getwheather() {
   let city = document.getElementById("cityInput").value;
   let tifeApiKey = "748757f44decbdd3da72168d9b197a08";
@@ -32,5 +33,6 @@ function getwheather() {
       })
       .catch((error) => {
           const weatherDataElement = document.getElementById("weatherData");
+          weatherDataElement.innerHTML = `<p>Error: ${error.message}</p>`;
       });
 };
