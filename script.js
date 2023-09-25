@@ -2,9 +2,9 @@
 function getwheather() {
   let city = document.getElementById("cityInput").value;
   let tifeApiKey = "748757f44decbdd3da72168d9b197a08";
-  let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${tifeApiKey}`;
+  let apikURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${tifeApiKey}`;
 
-  fetch(queryURL)
+  fetch(apikURL)
       .then((response) => {
           if (!response.ok) {
               throw new Error('network is not avalible');
